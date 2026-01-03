@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Fuzzy Diagnosis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background: linear-gradient(135deg, #f0f9ff, #e0f2fe); min-height: 100vh; font-family: 'Segoe UI', sans-serif; }
+        .header-card { background: linear-gradient(120deg, #2563eb, #3b82f6); color: white; border-radius: 20px; padding: 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+        .card { border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); background: white; }
+        .form-label { font-weight: 600; color: #1e40af; }
+        .tooltip-icon { cursor: help; color: #6b7280; margin-left: 6px; }
+        .output-card { background: linear-gradient(120deg, #dbeafe, #bfdbfe); color: #1e40af; }
+        .risk-healthy { background: linear-gradient(120deg, #bbf7d0, #86efac); color: #166534; }
+        .risk-low { background: linear-gradient(120deg, #fef9c3, #fef08a); color: #854d0e; }
+        .risk-medium { background: linear-gradient(120deg, #fed7aa, #fdba74); color: #9a3412; }
+        .risk-high { background: linear-gradient(120deg, #fecaca, #fca5a5); color: #991b1b; }
+        footer { margin-top: 60px; color: #4b5563; font-size: 0.95rem; }
+    </style>
+</head>
+<body class="py-5">
+    <div class="container">
+        <!-- Header -->
+        <div class="header-card mb-5">
+            <h1 class="display-5 mb-3">🫀 Heart Disease Risk Diagnosis</h1>
+            <p class="lead mb-0">Fuzzy Logic Expert System – 98.08% Accuracy on Cleveland Dataset</p>
+        </div>
+
+        <!-- Tabs -->
+        <ul class="nav nav-tabs mb-4" id="mainTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="manual-tab" data-bs-toggle="tab" data-bs-target="#manual" type="button">Manual Input</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="dataset-tab" data-bs-toggle="tab" data-bs-target="#dataset" type="button">Upload Dataset</button>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <!-- Manual Input Tab -->
+            <div class="tab-pane fade show active" id="manual" role="tabpanel">
+                <div class="card p-4">
+                    <form method="POST">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <label class="form-label">Chest Pain Type <span class="tooltip-icon" data-bs-toggle="tooltip" title="1: No Pain, 3: Non-Anginal, 5: Atypical Angina, 7: Typical Angina (high risk)">ℹ️</span></label>
+                                <select class="form-select" name="chest_pain" required>
+                                    <option value="">Select</option>
+                                    <option value="1">1 - No Pain</option>
+                                    <option value="3">3 - Non-Anginal</option>
+                                    <option value="5">5 - Atypical Angina</option>
+                                    <option value="7">7 - Typical Angina</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">HbA1c (%) <span class="tooltip-icon" data-bs-toggle="tooltip" title="Very Healthy: <6.5, Healthy: 6.5–8.5, High: >8.5">ℹ️</span></label>
+                                <input type="number" step="0.1" min="3" max="14" class="form-control" name="hba1c" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">HDL (mg/dL) <span class="tooltip-icon" data-bs-toggle="tooltip" title="Higher is better – Healthy: >50, Low: <40">ℹ️</span></label>
+                                <input type="number" min="10" max="80" class="form-control" name="hdl" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">LDL (mg/dL) <span class="tooltip-icon" data-bs-toggle="tooltip" title="Lower is better – Very Healthy: <80, High: >130">ℹ️</span></label>
+                                <input type="number" min="40" max="200" class="form-control" name="ldl" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Resting Heart Rate (bpm) <span class="tooltip-icon" data-bs-toggle="tooltip" title="Healthy: 60–100, Very Healthy: 40–70">ℹ️</span></label>
+                                <input type="number" min="40" max="160" class="form-control" name="heart_rate" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Age (years) <span class="tooltip-icon" data-bs-toggle="tooltip" title="Risk increases with age">ℹ️</span></label>
+                                <input type="number" min="20" max="120" class="form-control" name="age" required>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="form-label">Systolic Blood Pressure (mmHg) <span class="tooltip-icon" data-bs-toggle="tooltip" title="Normal: <140, High: >180">ℹ️</span></label>
+                                <input type="number" min="80" max="240" class="form-control" name="blood_pressure" required>
+                            </div>
+
+                            <div class="text-center mt-4">
+                                <button type="submit" class="btn btn-primary btn-lg px-5">Calculate Risk 🩺</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Manual Result -->
+                    {% if manual_result == "success" %}
+                    <div class="mt-5">
+                        <div class="card output-card p-4 text-center risk-{{ manual_level|lower|replace(' ', '-') }}">
+                            <h3>Diagnosis Result</h3>
+                            <h2 class="display-6 mb-3">{{ manual_level }}</h2>
+                            <p class="lead">Risk Score: {{ manual_score }} / 10</p>
+                            <p class="mt-4 fs-5">
+                                {% if manual_level == "Healthy" %}
+                                Your heart appears healthy. Continue a healthy lifestyle and regular checkups.
+                                {% elif manual_level == "Low Risk" %}
+                                Low risk detected. Monitoring cholesterol and blood pressure is recommended.
+                                {% elif manual_level == "Medium Risk" %}
+                                Medium risk. Lifestyle changes and medical consultation are advised.
+                                {% else %}
+                                High risk detected. Immediate medical attention is strongly recommended.
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                    {% elif manual_result == "error" %}
+                    <div class="alert alert-danger mt-4">{{ manual_level }}</div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Upload Dataset Tab -->
+            <div class="tab-pane fade" id="dataset" role="tabpanel">
+                <div class="card p-4">
+                    <h4 class="mb-4">Upload CSV Dataset</h4>
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="mb-4">
+                            <label class="form-label">Select CSV file (e.g., Cleveland Heart Disease dataset)</label>
+                            <input type="file" name="file" class="form-control" accept=".csv" required>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success btn-lg px-5">Analyze Dataset 📊</button>
+                        </div>
+                    </form>
+
+                    <!-- Dataset Results -->
+                    {% if uploaded_stats %}
+                    <div class="mt-5 card p-4">
+                        <h4>Analysis Summary</h4>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item"><strong>Total Patients:</strong> {{ uploaded_stats.total }}</li>
+                            <li class="list-group-item"><strong>Valid Predictions:</strong> {{ uploaded_stats.valid_predictions }}</li>
+                            <li class="list-group-item"><strong>Average Risk Score:</strong> {{ uploaded_stats.avg_risk }}</li>
+                            <li class="list-group-item"><strong>High Risk Patients:</strong> {{ uploaded_stats.high_risk_count }} ({{ uploaded_stats.high_risk_percent }}%)</li>
+                        </ul>
+                        <h5>Sample Predictions (First & Last 10 Rows)</h5>
+                        {{ uploaded_table | safe }}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="text-center">
+            <small>
+                Based on: <strong>"Diagnosis of heart diseases: A fuzzy-logic-based approach"</strong><br>
+                Md. Liakot Ali et al., PLOS ONE, 2024 | DOI: 10.1371/journal.pone.0293112<br><br>
+                Developed by <strong>Yeganeh Golzadeh</strong><br>
+                Islamic Azad University, Science and Research Branch
+            </small>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Activate tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        tooltipTriggerList.forEach(el => new bootstrap.Tooltip(el))
+    </script>
+</body>
+</html>
