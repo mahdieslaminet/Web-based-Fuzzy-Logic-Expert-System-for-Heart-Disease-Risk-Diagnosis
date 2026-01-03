@@ -12,12 +12,12 @@ Web-based Fuzzy Logic Expert System for Heart Disease Risk Diagnosis
 ## 📌 Table of Contents
 
 * [Live Demo](#-live-demo)
+* [Web Application Demo](#-web-application-demo)
 * [Project Overview](#-project-overview)
 * [Key Features](#-key-features)
 * [Fuzzy Logic Engine](#-how-the-fuzzy-logic-engine-works)
 * [Dataset](#-dataset)
 * [Results & Accuracy](#-results--accuracy)
-* [Web Application Demo](#-web-application-demo)
 * [Run on Google Colab](#-run-on-google-colab)
 * [Jupyter Notebook Version](#-jupyter-notebook-version)
 * [Local Installation](#-local-installation--run)
@@ -31,6 +31,19 @@ Web-based Fuzzy Logic Expert System for Heart Disease Risk Diagnosis
 
 **Try it online (no installation required):**
 👉 [https://huggingface.co/spaces/xoloveyg/heart-disease-fuzzy-diagnosis](https://huggingface.co/spaces/xoloveyg/heart-disease-fuzzy-diagnosis)
+
+---
+
+## 🌐 Web Application Demo
+
+<p align="center">
+  <img src="images/demo_1.png" width="46%">
+  <img src="images/demo_2.png" width="46%">
+</p>
+
+<p align="center">
+  <i>Web Application Demo – Manual Input & Batch CSV Analysis</i>
+</p>
 
 ---
 
@@ -85,14 +98,6 @@ The system follows the **Mamdani fuzzy inference model**:
 | P001    | 2.3        | Healthy    |
 | P002    | 5.6        | Medium     |
 | P003    | 8.1        | High       |
-
----
-
-## 🌐 Web Application Demo
-
-<p align="center">
-  <img src="images/web_demo.png" width="800">
-</p>
 
 ---
 
