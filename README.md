@@ -15,14 +15,12 @@ Web-based Fuzzy Logic Expert System for Heart Disease Risk Diagnosis
 * [Web Application Demo](#-web-application-demo)
 * [Project Overview](#-project-overview)
 * [Key Features](#-key-features)
+* [Related Research Paper](#-related-research-paper)
 * [Fuzzy Logic Engine](#-how-the-fuzzy-logic-engine-works)
 * [Dataset](#-dataset)
 * [Results & Accuracy](#-results--accuracy)
-* [Run on Google Colab](#-run-on-google-colab)
 * [Jupyter Notebook Version](#-jupyter-notebook-version)
 * [Local Installation](#-local-installation--run)
-* [Hugging Face Deployment](#-hugging-face-space)
-* [Related Research Paper](#-related-research-paper)
 * [Project Structure](#-project-structure)
 
 ---
@@ -63,6 +61,17 @@ It provides an accessible, cost-effective tool for early detection of cardiovasc
 * **Multi-Platform** – Web, Colab, Local Python, and Jupyter Notebook.
 
 ---
+## 📚 Related Research Paper
+
+**DOI:** 10.1371/journal.pone.0293112
+
+📄 **English Paper:**
+[https://drive.google.com/file/d/1Bn5coYZ4baOP-O6KcNMVRoNCxlFB3yAe/view](https://drive.google.com/file/d/1Bn5coYZ4baOP-O6KcNMVRoNCxlFB3yAe/view)
+
+🇮🇷 **Persian Translation:**
+[https://drive.google.com/file/d/1EOuBJlB39NDVcf5nKRMlDKMT5dkioPBw/view](https://drive.google.com/file/d/1EOuBJlB39NDVcf5nKRMlDKMT5dkioPBw/view)
+
+---
 
 ## 🔬 How the Fuzzy Logic Engine Works
 
@@ -82,8 +91,6 @@ The system follows the **Mamdani fuzzy inference model**:
 | 4–6         | Low Risk    |
 | 6–8         | Medium Risk |
 | >8          | High Risk   |
-
-حتماً 👌 این نسخه **خیلی خلاصه، تمیز و مناسب README** ـه؛ فقط **یک جدول + لینک دانلود**، بدون توضیح اضافی:
 
 ---
 
@@ -128,19 +135,7 @@ This project uses the **UCI Cleveland Heart Disease Dataset**, a standard benchm
 
 ---
 
-## ☁️ Run on Google Colab
 
-You can run the fuzzy logic engine **without Flask** using Jupyter Notebook:
-
-👉 **Colab Link:**
-[https://colab.research.google.com/drive/YOUR_NOTEBOOK_LINK](https://colab.research.google.com/drive/YOUR_NOTEBOOK_LINK)
-
-Steps:
-
-1. Upload `.py` files
-2. Run cells
-3. View plots & tables
-4. Save `.ipynb`
 
 ---
 
@@ -169,29 +164,6 @@ python app.py
 
 Runs on:
 👉 [http://localhost:5000](http://localhost:5000)
-
----
-
-## 🤗 Hugging Face Space
-
-Live deployment:
-👉 [https://huggingface.co/spaces/xoloveyg/heart-disease-fuzzy-diagnosis](https://huggingface.co/spaces/xoloveyg/heart-disease-fuzzy-diagnosis)
-
----
-
-## 📚 Related Research Paper
-
-**DOI:** 10.1371/journal.pone.0293112
-
-📄 **English Paper:**
-[https://drive.google.com/file/d/1Bn5coYZ4baOP-O6KcNMVRoNCxlFB3yAe/view](https://drive.google.com/file/d/1Bn5coYZ4baOP-O6KcNMVRoNCxlFB3yAe/view)
-
-🇮🇷 **Persian Translation:**
-[https://drive.google.com/file/d/1EOuBJlB39NDVcf5nKRMlDKMT5dkioPBw/view](https://drive.google.com/file/d/1EOuBJlB39NDVcf5nKRMlDKMT5dkioPBw/view)
-
-<p align="center">
-  <img src="images/paper_preview.png" width="600">
-</p>
 
 ---
 
