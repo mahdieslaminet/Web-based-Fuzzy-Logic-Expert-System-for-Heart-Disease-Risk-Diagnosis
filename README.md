@@ -1,5 +1,4 @@
 
----
 
 # ❤️ Heart Disease Risk Diagnosis – Fuzzy Logic Expert System
 
@@ -219,8 +218,8 @@ python app.py
 
 For questions, suggestions, or collaborations, feel free to reach out:
 
-* **Author / Maintainer:** Yegolzadeh
-* **Email:** `yegolzadeh01@gmail.com`
+* **Email:** [yegolzadeh01@gmail.com](mailto:yegolzadeh01@gmail.com)
+* **GitHub:** [https://github.com/yegolzadeh](https://github.com/yegolzadeh)
 
 > Pull requests, issues, and contributions are always welcome!
 
@@ -229,7 +228,4 @@ For questions, suggestions, or collaborations, feel free to reach out:
 
 This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
 
-You are free to **use, modify, and distribute** the code, with proper attribution.
-
----
 
