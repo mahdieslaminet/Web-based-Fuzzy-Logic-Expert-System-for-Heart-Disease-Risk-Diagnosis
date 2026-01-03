@@ -20,9 +20,9 @@ Web-based Fuzzy Logic Expert System for Heart Disease Risk Diagnosis
 * [Fuzzy Logic Engine](#-how-the-fuzzy-logic-engine-works)
 * [Dataset](#-dataset)
 * [Results & Accuracy](#-results--accuracy)
+* [Project Structure](#-project-structure)
 * [Jupyter Notebook Version](#-jupyter-notebook-version)
 * [Local Installation](#-local-installation--run)
-* [Project Structure](#-project-structure)
 
 ---
 
@@ -82,8 +82,6 @@ It provides an accessible, cost-effective tool for early detection of cardiovasc
 
 🎥 **Project Video Demo:**
 [Google Drive Link for the video](https://drive.google.com/file/d/1eqGC8JwqYfL1zOvxYs9W07SmCzH7YtZ8/view?usp=drive_link)
-
-> *Replace `PROJECT_REPORT_LINK` and `PROJECT_VIDEO_LINK` with your actual Google Drive file IDs.*
 
 ---
 
@@ -206,7 +204,32 @@ source venv/bin/activate  # Linux / Mac
 venv\Scripts\activate     # Windows
 pip install -r requirements.txt
 python app.py
+
 ```
+
+## 🙏 Acknowledgements
+
+* Thanks to the authors of the original PLOS ONE paper for their **groundbreaking research** on fuzzy logic-based heart disease prediction.
+* Thanks to the **UCI Machine Learning Repository** and **Kaggle community** for providing accessible datasets.
+* Special thanks to **HuggingFace Spaces** for hosting the live demo.
+
+---
+
+## 📫 Contact
+
+For questions, suggestions, or collaborations, feel free to reach out:
+
+* **Author / Maintainer:** Yegolzadeh
+* **Email:** `yegolzadeh01@gmail.com`
+
+> Pull requests, issues, and contributions are always welcome!
+
+---
+## ⚖️ License
+
+This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+
+You are free to **use, modify, and distribute** the code, with proper attribution.
 
 ---
 
