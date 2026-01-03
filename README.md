@@ -1,3 +1,10 @@
+عالی! من می‌تونم README شما رو به‌روزرسانی کنم تا شامل:
+
+1. لینک گوگل درایو **گزارش پروژه** و **ویدیو پروژه**
+2. بخش نصب و اجرا **لوکال** و **Jupyter Notebook** با توضیحات دقیق‌تر
+3. اضافه کردن لینک *[Related Research Paper](#-related-research-paper)* در انتها
+
+من نسخه‌ی کامل و اصلاح‌شده‌ش رو برات آماده کردم:
 
 ---
 
@@ -16,6 +23,7 @@ Web-based Fuzzy Logic Expert System for Heart Disease Risk Diagnosis
 * [Project Overview](#-project-overview)
 * [Key Features](#-key-features)
 * [Related Research Paper](#-related-research-paper)
+* [Project Report & Video](#-project-report--video)
 * [Fuzzy Logic Engine](#-how-the-fuzzy-logic-engine-works)
 * [Dataset](#-dataset)
 * [Results & Accuracy](#-results--accuracy)
@@ -61,9 +69,10 @@ It provides an accessible, cost-effective tool for early detection of cardiovasc
 * **Multi-Platform** – Web, Colab, Local Python, and Jupyter Notebook.
 
 ---
+
 ## 📚 Related Research Paper
 
-**DOI:** 10.1371/journal.pone.0293112
+**DOI:** 
 
 📄 **English Paper:**
 [https://drive.google.com/file/d/1Bn5coYZ4baOP-O6KcNMVRoNCxlFB3yAe/view](https://drive.google.com/file/d/1Bn5coYZ4baOP-O6KcNMVRoNCxlFB3yAe/view)
@@ -73,13 +82,24 @@ It provides an accessible, cost-effective tool for early detection of cardiovasc
 
 ---
 
+## 📂 Project Report & Video
+
+📄 **Project Report (PDF):**
+[Google Drive Link for the report](https://drive.google.com/file/d/1Kx8eTzOQn6yL99oQq_SWZgqxj7Swo3FZ/view?usp=drive_link)
+
+🎥 **Project Video Demo:**
+[Google Drive Link for the video](https://drive.google.com/file/d/1eqGC8JwqYfL1zOvxYs9W07SmCzH7YtZ8/view?usp=drive_link)
+
+> *Replace `PROJECT_REPORT_LINK` and `PROJECT_VIDEO_LINK` with your actual Google Drive file IDs.*
+
+---
+
 ## 🔬 How the Fuzzy Logic Engine Works
 
 The system follows the **Mamdani fuzzy inference model**:
 
 1. **Fuzzification** – Triangular membership functions
-2. **Rule Base** –
-   `4 × 3 × 2 × 5 × 3 × 4 × 3 = 4320 rules`
+2. **Rule Base** – `4 × 3 × 2 × 5 × 3 × 4 × 3 = 4320 rules`
 3. **Inference & Aggregation** – MIN–MAX operators
 4. **Defuzzification** – Centroid method
 
@@ -135,38 +155,6 @@ This project uses the **UCI Cleveland Heart Disease Dataset**, a standard benchm
 
 ---
 
-
-
----
-
-## 📓 Jupyter Notebook Version
-
-A clean, academic-friendly notebook is included for GitHub viewing:
-
-📄 `heart_disease_fuzzy.ipynb`
-
-Includes:
-
-* Step-by-step execution
-* Visualizations
-* Inline explanations
-
----
-
-## 💻 Local Installation & Run
-
-```bash
-git clone https://github.com/yegolzadeh/heart-disease-risk-fuzzy-implement-main.git
-cd heart-disease-risk-fuzzy-implement-main
-pip install -r requirements.txt
-python app.py
-```
-
-Runs on:
-👉 [http://localhost:5000](http://localhost:5000)
-
----
-
 ## 🗂️ Project Structure
 
 ```
@@ -180,5 +168,52 @@ Runs on:
 │   ├── web_demo.png
 │   └── paper_preview.png
 └── README.md
+
 ```
+
+## 📓 Jupyter Notebook Version
+
+A clean, academic-friendly notebook is included for GitHub viewing:
+
+📄 `heart_disease_fuzzy.ipynb`
+
+Includes:
+
+* Step-by-step execution
+* Visualizations
+* Inline explanations
+
+### Run Notebook Locally
+
+```bash
+git clone https://github.com/yegolzadeh/heart-disease-risk-fuzzy-implement-main.git
+cd heart-disease-risk-fuzzy-implement-main
+pip install -r requirements.txt
+jupyter notebook
+```
+
+---
+
+## 💻 Local Installation & Run
+
+```bash
+git clone https://github.com/yegolzadeh/heart-disease-risk-fuzzy-implement-main.git
+cd heart-disease-risk-fuzzy-implement-main
+pip install -r requirements.txt
+python app.py
+```
+
+Runs on: 👉 [http://localhost:5000](http://localhost:5000)
+
+> *Optional:* You can also run using **Python virtual environment**:
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux / Mac
+venv\Scripts\activate     # Windows
+pip install -r requirements.txt
+python app.py
+```
+
+---
 
