@@ -83,6 +83,33 @@ The system follows the **Mamdani fuzzy inference model**:
 | 6–8         | Medium Risk |
 | >8          | High Risk   |
 
+حتماً 👌 این نسخه **خیلی خلاصه، تمیز و مناسب README** ـه؛ فقط **یک جدول + لینک دانلود**، بدون توضیح اضافی:
+
+---
+
+## 📊 Dataset
+
+This project uses the **UCI Cleveland Heart Disease Dataset**, a standard benchmark dataset for heart disease prediction.
+
+### Features Used
+
+| Feature         | Description               |
+| --------------- | ------------------------- |
+| Age             | Patient age               |
+| Chest Pain Type | Chest pain category (0–3) |
+| HbA1c           | Blood sugar level         |
+| HDL             | High-density lipoprotein  |
+| LDL             | Low-density lipoprotein   |
+| Heart Rate      | Resting heart rate        |
+| Systolic BP     | Systolic blood pressure   |
+
+> *Note: HDL, LDL, and HbA1c are mapped from available cholesterol-related features based on the referenced paper.*
+
+### 📥 Download
+
+🔗 **Kaggle Dataset (Cleveland Heart Disease):**
+[Heart Disease UCI - Cleveland](https://www.kaggle.com/datasets/redwankarimsony/heart-disease-data)
+
 ---
 
 ## 📊 Results & Accuracy
